@@ -1,27 +1,12 @@
 pipeline {
     agent any
 
-    environment {
-        PATH = "/opt/homebrew/bin:$PATH"
-    }
     stages {
-        stage('Build') {
+        stage('Hello') {
             steps {
-                sh 'npm install'
+                echo 'Hello World'
             }
         }
-        
-     stage('Test') { 
-        steps { 
-           sh 'echo "testing application..."'
-        }
-      }
+    }
+}
 
-         stage("Deploy nodejs application") { 
-         steps { 
-           sh 'echo "deploying application..."'
-         }
-
-     }       
-   }
-  }
