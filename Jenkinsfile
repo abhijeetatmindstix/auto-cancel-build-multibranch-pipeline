@@ -12,7 +12,7 @@ pipeline {
         } 
         stage("timeout") {
             steps {
-                timeout(time: 10, unit: 'MINUTES') {
+                timeout(time: 30, unit: 'MINUTES') {
                     input message: "does this look good"
                 }
             }
