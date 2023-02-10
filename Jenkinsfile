@@ -1,17 +1,15 @@
 pipeline {
-    agent any
 
+    agent any
+        options {
+                   disableConcurrentBuilds(abortPrevious: true)
+                }
     stages {
         stage('Hello') {
             steps {
                 echo 'Hello World'
             }
-        }
-        stage("cancel-previous-build") {
-            steps {
-                cancelUnwantedBuilds()
-            }
-        }        
+        }       
     }
 }
 
