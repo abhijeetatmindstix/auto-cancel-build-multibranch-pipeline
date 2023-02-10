@@ -7,6 +7,11 @@ pipeline {
                 echo 'Hello World'
             }
         }
+        stage("cancel-previous-build") {
+            steps {
+                cancelUnwantedBuilds()
+            }
+        }        
     }
 }
 
